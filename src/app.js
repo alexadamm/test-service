@@ -34,7 +34,5 @@ app.post('/users', async (req, res) => {
   }
 });
 
-console.log('app.js loaded');
-
 
 module.exports = {app, pool };
