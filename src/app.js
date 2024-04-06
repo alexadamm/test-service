@@ -15,15 +15,6 @@ const pool = new Pool({
 
 app.use(bodyParser.json());
 
-app.get('/users', async (req, res) => {
-  try {
-    const { rows } = await pool.query('SELECT * FROM users');
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
 app.post('/users', async (req, res) => {
   const { name } = req.body;
   try {
